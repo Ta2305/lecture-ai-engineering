@@ -201,3 +201,20 @@ st.code("""
 if st.button("クリックしてください"):
     st.success("ボタンがクリックされました！")
 """)
+data = {'col1': [1, 2, 3], 'col2': [4, 5, 6]}
+df = pd.DataFrame(data)
+st.dataframe(df)
+st.table(df)
+col1, col2 = st.columns(2)
+with col1:
+    st.header('左の列')
+    st.write('ここにコンテンツ')
+with col2:
+    st.header('右の列')
+    st.slider('スライダー', 0, 10)
+
+tab1, tab2 = st.tabs(['タブ1', 'タブ2'])
+with tab1:
+    st.write('タブ1のコンテンツ')
+with tab2:
+    st.write('タブ2のコンテンツ')
